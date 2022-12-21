@@ -4,7 +4,8 @@
 
 class Square:
     """Represents a square class """
-    def __init__(self, size=0, position=(0,0)):
+
+    def __init__(self, size=0, position=(0, 0)):
         """Initialize data"""
 
         if type(size) != int:
@@ -27,7 +28,7 @@ class Square:
             raise ValueError("size must be >= 0")
         else:
             self.__size = value
-            
+
     @property
     def position(self):
         """ retrieves position """
@@ -45,8 +46,6 @@ class Square:
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = value
-    
-        
 
     def area(self):
         """ Returns the area of a square """
