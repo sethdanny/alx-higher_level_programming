@@ -14,7 +14,7 @@ class Node:
     def data(self):
         """ Retrieves the data """
         return self.__data
-    
+
     @data.setter
     def data(self, value):
         """ sets the data """
@@ -27,11 +27,11 @@ class Node:
     def next_node(self):
         """ retrieves the next node """
         return self.__next_node
-    
+
     @next_node.setter
     def next_node(self, value):
         """ sets the value for the next_node """
-        
+
         if not isinstance(value, Node) and value is not None:
             raise TypeError("next_node must be a Node object")
         else:
@@ -46,7 +46,7 @@ class SinglyLinkedList:
 
     def sorted_insert(self, value):
         """ insert node in the correct sorted position """
-        
+
         new = Node(value)
         if self.__head is None:
             new.next_node = None
@@ -71,9 +71,3 @@ class SinglyLinkedList:
             values.append(str(tmp.data))
             tmp = tmp.next_node
         return ('\n'.join(values))
-    
-
-            
-                                               
-
-    
