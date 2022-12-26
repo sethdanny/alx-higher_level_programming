@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 def add_integer(a, b=98):
-    """ function to calculate two integers """
+    """ function to add two integers """
 
     if not isinstance(a, (int, float)):
         raise TypeError("a must be an integer")
