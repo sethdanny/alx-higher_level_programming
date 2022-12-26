@@ -1,0 +1,21 @@
+# run tests with python3 -m doctest -v tests/0-add_integer.txt
+
+#import your add module
+>>> add_integer = __import__('0-add_integer').add_integer
+
+SUCCESS CASE:
+Test unsigned int and floats:
+     >>> print(add_integer(1, 2))
+     3
+     >>> print(add_integer(-1, 4))
+     3
+     >>> print(add_integer(1.2, 1.5))
+     2
+     >>> print(add_integer(3.5, 2))
+     5
+     >>> print(add_integer(-2, 6))
+     4
+
+Test use of default value b = 98:
+     >>> print(add_integer(2))
+     100
