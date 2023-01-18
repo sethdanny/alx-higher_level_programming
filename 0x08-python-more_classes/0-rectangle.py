@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-""" creates an empty class """
+""" module for an empty class """
 
 
 class Rectangle:
