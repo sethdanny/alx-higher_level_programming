@@ -1,2 +1,2 @@
---full description of the table
-SHOW COLUMNS FROM first_table;
+-- full description of the table
+SHOW CREATE TABLE first_table;
