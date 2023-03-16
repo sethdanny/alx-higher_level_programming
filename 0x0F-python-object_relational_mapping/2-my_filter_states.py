@@ -19,7 +19,7 @@ if __name__ == "__main__":
         print("error in connection")
     try:
         cur = mydb.cursor()
-        cur.execute("SELECT * FROM states ORDER BY states.id ASC")
+        cur.execute("SELECT * FROM states WHERE name LIKE BINARY'{}' ORDER BY states.id ASC".format(sys.argv[4]))
         rows = cur.fetchall()
         for row in rows:
             print(row)
