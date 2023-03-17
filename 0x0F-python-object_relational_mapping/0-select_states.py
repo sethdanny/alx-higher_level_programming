@@ -2,6 +2,7 @@
 """
 connect to the database and fetch data
 """
+
 import MySQLdb
 import sys
 
