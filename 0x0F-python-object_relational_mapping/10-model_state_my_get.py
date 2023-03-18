@@ -19,7 +19,7 @@ if __name__ == '__main__':
     Session = sessionmaker(bind=engine)
     local_session = Session()
     states = local_session.query(State).filter(
-            State.name.like(State.name)).first()
+            State.name.like(state_name)).first()
     local_session.close()
     engine.dispose()
 
