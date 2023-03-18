@@ -18,8 +18,8 @@ if __name__ == '__main__':
         pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     local_session = Session()
-    states = local_session.query(State).filter(State.name.op('regexp')('.*a+.*')
-            ).order_by(State.id)
+    states = local_session.query(State).filter(
+            State.name.op('regexp')('.*a+.*')).order_by(State.id)
     local_session.close()
 
     for state in states:
