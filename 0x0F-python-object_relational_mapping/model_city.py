@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ module for model city """
 
-from sqlalchemy import Column, String, Integer
+from sqlalchemy import Column, String, Integer, ForeignKey
 from model_state import Base
 
 
@@ -12,4 +12,4 @@ class City(Base):
     id = Column(Integer,  autoincrement=True, unique=True,
                 nullable=False, primary_key=True)
     name = Column(String(128), nullable=False)
-    state_id = Column(Integer, nullable=False, ForeignKey('state.id'))
+    state_id = Column(Integer, ForeignKey('state.id'), nullable=False)
