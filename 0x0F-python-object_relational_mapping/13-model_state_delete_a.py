@@ -19,7 +19,11 @@ if __name__ == '__main__':
                            pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     local_session = Session()
-    state = local_session.query(State).filter(State.name.like('%a%')).delete()
+    states = local_session.query(State).filter(
+            State.name.op('regexp')('.*a+.*'))
+
+    for state in states:
+        local_session.delete(state)
     local_session.commit()
 
     local_session.close()
