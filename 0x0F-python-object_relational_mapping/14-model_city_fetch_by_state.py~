@@ -1,0 +1,30 @@
+#!/usr/bin/python3
+""" fetch all cities from a state table """
+
+from sqlalchemy.orm import sessionmaker
+from model_state import Base, State
+from model_city import Base, City
+from sqlalchemy import create_engine
+import sys
+
+if __name__ == '__main__':
+    username = sys.argv[1]
+    passwd = sys.argv[2]
+    db_name = sys.argv[3]
+    host = 'localhost'
+    port = 3306
+
+    engine = create_engine('mysql+mysqldb://{}:{}@{}:{}/{}'.format(
+                           username, password, host, port, db_name),
+                           pool_pre_ping=True))
+
+    Session=sessionmaker(bind=engine)
+    local_session = Session()
+    results = local_session.query(City, State).filter(
+        City.state_id == State.id).order_by(City.id).all()
+
+    for row in results:
+        print(f"{row[1].name}: {(row[0].id)} {row[0].name}")
+
+    local_session.close()
+    engine.dispose()
