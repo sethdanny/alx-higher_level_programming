@@ -8,5 +8,6 @@ if __name__ == '__main__':
     url = argv[1]
     email = argv[2]
 
-    result = requests.post(url data={'email': email})
+    data = {'email': email}
+    result = requests.post(url, data=data)
     print(f"Your email is: {result.text}")
