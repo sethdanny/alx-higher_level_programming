@@ -10,4 +10,4 @@ if __name__ == '__main__':
 
     params = {'email': email}
     result = requests.post(url, params)
-    print(result.text})
+    print(result.text)
