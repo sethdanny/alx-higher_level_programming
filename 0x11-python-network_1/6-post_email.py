@@ -9,5 +9,5 @@ if __name__ == '__main__':
     email = argv[2]
 
     params = {'email': email}
-    result = requests.post(url, data=params)
+    result = requests.post(url, params)
     print(f"Your email is: {result.text}")
