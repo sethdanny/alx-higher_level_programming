@@ -32,12 +32,30 @@ FAILURE CASES:
 Test Case 4: negative size (should raise an exception)
 Traceback (most recent call last):
     ...
-    ValueError: size must be >= 0
+ValueError: size must be >= 0
 
 Test case 5: float size and less than 0 (should raise an exception)
 Traceback (most recent call last):
     ...
-    TypeError: size must be an integer
+TypeError: size must be an integer
 
+Test case 6: size not being an integer
+>>> print_square("nadduli")
+Traceback (most recent call last):
+    ...
+TypeError: size must be an integer
+
+
+Test case 7: size is None
+>>> print_square(None)
+Traceback (most recent call last):
+    ...
+TypeError: size must be an integer
+
+# Test case: missing one argument
+>>> print_square()
+Traceback (most recent call last):
+    ...
+TypeError: print_square() missing 1 required positional argument: 'size'
 
 
