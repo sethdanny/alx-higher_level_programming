@@ -6,11 +6,10 @@
 
 SUCCESS CASE:
 Test case 1: print text with ? symbol
->>> 5-text_indentation("Hello?")
+>>> text_indentation("Hello?")
 Hello?
 <BLANKLINE>
 
 Test case 2: No spaces are printed at the beginning of a line.
 >>> text_indentation("   Hello World!")
 Hello World!
-<BLANKLINE>

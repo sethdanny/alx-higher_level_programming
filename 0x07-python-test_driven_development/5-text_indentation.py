@@ -8,7 +8,15 @@ def text_indentation(text):
         raise TypeError("text must be a string")
 
     text = text.strip()
+    current_line = ""
+
     for char in text:
-        print(char, end="")
+        current_line += char
         if char in ".?:":
-            print("\n\n", end="")
+            current_line = current_line.strip()
+            print(current_line)
+            print()
+            current_line = ""
+
+    if current_line:
+        print(current_line.strip())
