@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""module for function to divide elements of a matrix in a list by a value """
+
+
 def matrix_divided(matrix, div):
     """ function to divide elements of a matrix in a list by a value """
 
@@ -29,4 +32,3 @@ def matrix_divided(matrix, div):
         new_matrix.append(new_list)
 
     return new_matrix
-        
