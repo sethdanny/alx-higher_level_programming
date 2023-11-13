@@ -21,3 +21,18 @@ FAIL CASE:
 Traceback (most recent call last):
     ...
 TypeError: text must be a string
+
+>>> text_indentation("323.4?")
+323.
+<BLANKLINE>
+4?
+<BLANKLINE>
+
+>>> text_indentation()
+Traceback (most recent call last):
+...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+>>> text_indentation("45?", "d")
+Traceback (most recent call last):
+...
+TypeError: text_indentation() takes 1 positional argument but 2 were given
