@@ -7,15 +7,11 @@ def text_indentation(text):
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
-    text = text.strip()
-    current_line = ""
-
-    for char in text:
-        current_line += char
-        if char in ".?:":
-            print(current_line)
-            print()
-            current_line = ""
-
-    if current_line:
-        print(current_line)
+    else:
+        text = text.replace(". ", ".").replace(": ", ":").replace("? ", "?")
+        for i in text:
+            if i == '.' or i == '?' or i == ':':
+                print(i, end="")
+                print("\n")
+            else:
+                print(i, end="")
