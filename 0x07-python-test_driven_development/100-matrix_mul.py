@@ -17,10 +17,10 @@ def matrix_mul(m_a, m_b):
         raise TypeError('m_b must be a list')
 
     for row in m_a:
-        if type(l) is not list:
+        if type(row) is not list:
             raise TypeError('m_a must be a list of lists')
     for row in m_b:
-        if type(l) is not list:
+        if type(row) is not list:
             raise TypeError('m_b must be a list of lists')
 
     if len(m_a) == 0:
@@ -77,7 +77,7 @@ def matrix_mul(m_a, m_b):
         for c in range(c_size):
             ls.append(0)
             for r in m_b:
-                ls[j] += r[i] * l[n]
+                ls[j] += r[i] * row[n]
                 n += 1
             i += 1
             n = 0
