@@ -41,7 +41,7 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """Sets the width attribute"""
-        if type(value) is not int:
+        if not isinstance(value, int):
             raise TypeError('width must be an integer')
 
         if value <= 0:
@@ -51,7 +51,7 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         """Sets the height attribute"""
-        if type(value) is not int:
+        if not isinstance(value, int):
             raise TypeError('height must be an integer')
 
         if value <= 0:
@@ -61,7 +61,7 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """Sets the x attribute"""
-        if type(value) is not int:
+        if not isinstance(value, int):
             raise TypeError('x must be an integer')
 
         if value < 0:
@@ -71,7 +71,7 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         """Sets the y attribute"""
-        if type(value) is not int:
+        if not isinstance(value, int):
             raise TypeError('y must be an integer')
 
         if value < 0:
@@ -81,8 +81,37 @@ class Rectangle(Base):
     def area(self):
         """Retrieves the area of rectangle"""
         return (self.__width * self.__height)
-    
+
     def display(self):
-        """print rectangle with # """
-        for _ in range (self.__height):
-            print('#' * self.__width)
+        """Prints the Rectangle instance with the # character."""
+
+        for y in range(0, self.__y):
+            print()
+        for i in range(0, self.__height):
+            for x in range(0, self.__x):
+                print(" ", end="")
+            for j in range(0, self.__width):
+                print("#", end="")
+            print()
+
+    def __str__(self) -> str:
+        """returns string representation of a rectangle"""
+
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+                 self.id, self.__x, self.__y, self.__width, self.__height)
+
+    def update(self, *args):
+        """Assign arguments to each attribute"""
+        if args:
+            if len(args) > 0:
+                self.id = args[0]
+            if len(args) > 1:
+                self.width = args[1]
+            if len(args) > 2:
+                self.height = args[2]
+            if len(args) > 3:
+                self.x = args[3]
+            if len(args) > 4:
+                self.y = args[4]
+        else:
+            raise ValueError("Atleast one argument is required")
