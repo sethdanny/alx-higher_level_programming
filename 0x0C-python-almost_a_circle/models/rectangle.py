@@ -100,7 +100,7 @@ class Rectangle(Base):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
                  self.id, self.__x, self.__y, self.__width, self.__height)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Assign arguments to each attribute"""
         if args:
             if len(args) > 0:
@@ -113,5 +113,15 @@ class Rectangle(Base):
                 self.x = args[3]
             if len(args) > 4:
                 self.y = args[4]
+
+        elif kwargs:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
         else:
             raise ValueError("Atleast one argument is required")
+        
+    def to_dictionary(self):
+        """Represents dictionary of a rectangle"""
+
+        my_dict = { 'id': self.id, 'width': self.__width, 'height': self.__height, 'x': self.__x, 'y': self.__y}
+        return my_dict
